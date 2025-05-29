@@ -1,0 +1,96 @@
+{
+    "id": 5,
+    "domain": "biology",
+    "workflow_tags": "neurobiology",
+    "domain_knowledge": "",
+    "datasets": [
+        {
+            "name": "cell_metadata",
+            "description": "The 'cell_metadata' dataset contains comprehensive metadata for over 4 million individual mouse brain cells, sourced from 345 distinct donors. It details unique identifiers, spatial coordinates, and experimental conditions across 28 distinct brain regions, such as the RHP and ACA. This dataset is essential for spatial transcriptomics studies, allowing researchers to map gene expression patterns to specific brain regions and understand the cellular architecture of the mouse brain.",
+            "columns": {
+                "raw": [
+                    {
+                        "name": "cell_label",
+                        "description": "A unique identifier assigned to each of the 4,042,976 cells, crucial for tracking and referencing individual cells across experiments."
+                    },
+                    {
+                        "name": "cell_barcode",
+                        "description": "A unique sequence used to tag individual cells, enabling the differentiation and isolation of cells in high-throughput assays."
+                    },
+                    {
+                        "name": "barcoded_cell_sample_label",
+                        "description": "A label linking each cell's barcode to its specific sample, providing context about the source or experimental condition of the cell."
+                    },
+                    {
+                        "name": "library_label",
+                        "description": "Identifier for the sequencing library, representing a batch of DNA fragments prepared for sequencing and analysis."
+                    },
+                    {
+                        "name": "feature_matrix_label",
+                        "description": "Denotes the specific feature matrix used, which typically contains quantitative data such as gene expression levels across various cells."
+                    },
+                    {
+                        "name": "entity",
+                        "description": "Represents the biological entity being studied, in this case, 'cell', highlighting the focus on cellular-level analyses."
+                    },
+                    {
+                        "name": "brain_section_label",
+                        "description": "Label for the specific section of the brain from which the cell was isolated, relevant in studies examining the structural and functional organization of the brain."
+                    },
+                    {
+                        "name": "library_method",
+                        "description": "The technique or protocol used to prepare the sequencing library, such as 10Xv3, indicating the technological approach employed in data generation."
+                    },
+                    {
+                        "name": "region_of_interest_acronym",
+                        "description": "Acronym for the specific region of interest within the brain, often used in neurobiology to refer to distinct anatomical structures."
+                    },
+                    {
+                        "name": "donor_label",
+                        "description": "Identifier for the donor organism from which the biological sample was obtained, important for tracking genetic and phenotypic information."
+                    },
+                    {
+                        "name": "donor_genotype",
+                        "description": "The genetic makeup of the donor, which can influence the characteristics of the cells derived from them, relevant in genetic studies."
+                    },
+                    {
+                        "name": "donor_sex",
+                        "description": "The biological sex of the donor, which can be relevant in studies of sex-specific differences in brain structure and function."
+                    },
+                    {
+                        "name": "dataset_label",
+                        "description": "Identifier for the dataset or experiment, useful for distinguishing between different experiments or data collections."
+                    },
+                    {
+                        "name": "x",
+                        "description": "X-coordinate for spatial localization of the cell within the brain, used in spatial transcriptomics to map cells to anatomical locations."
+                    },
+                    {
+                        "name": "y",
+                        "description": "Y-coordinate for spatial localization of the cell within the brain, complementing the x-coordinate for precise mapping."
+                    },
+                    {
+                        "name": "cluster_alias",
+                        "description": "Alias for a group of cells that have been clustered together based on similar characteristics, such as gene expression profiles, aiding in the identification of cell types and states."
+                    }
+                ]
+            }
+        }
+    ],
+    "intermediate": [],
+    "hypotheses": {
+        "main": [
+            {}
+        ],
+        "intermediate": []
+    },
+    "queries": [
+        [
+            {
+                "qid": 0,
+                "question_type": "relationship",
+                "question": "Do specific supertypes correlate with unique spatial localizations within brain sections?"
+            }
+        ]
+    ]
+}
