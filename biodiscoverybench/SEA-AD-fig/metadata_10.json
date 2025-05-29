@@ -1,0 +1,98 @@
+{
+    "id": 10,
+    "domain": "neuroscience",
+    "workflow_tags": "visualization",
+    "domain_knowledge": "",
+    "datasets": [
+        {
+            "name": "sea-ad_cohort_donor_metadata_072524.xlsx",
+            "description": "Dataset containing demographic, clinical, and neuropathological data from donors, focusing on Alzheimer's disease (AD) and related conditions.",
+            "columns": {
+                "raw": [
+                    {"name": "Donor ID", "description": "Unique identifier assigned to each donor."},
+                    {"name": "Primary Study Name", "description": "Primary study associated with the donor (e.g., ACT, ADRC Clinical Core)."},
+                    {"name": "Secondary Study Name", "description": "Secondary study associated with the donor, if applicable."},
+                    {"name": "Age at Death", "description": "Age of the donor at the time of death, in years."},
+                    {"name": "Sex", "description": "Biological sex of the donor (Male or Female)."},
+                    {"name": "Race (choice=White)", "description": "Indicates if the donor's race is White (Checked or Unchecked)."},
+                    {"name": "Race (choice=Black/ African American)", "description": "Indicates if the donor's race is Black or African American (Checked or Unchecked)."},
+                    {"name": "Race (choice=Asian)", "description": "Indicates if the donor's race is Asian (Checked or Unchecked)."},
+                    {"name": "Race (choice=American Indian/ Alaska Native)", "description": "Indicates if the donor's race is American Indian or Alaska Native (Checked or Unchecked)."},
+                    {"name": "Race (choice=Native Hawaiian or Pacific Islander)", "description": "Indicates if the donor's race is Native Hawaiian or Pacific Islander (Checked or Unchecked)."},
+                    {"name": "Race (choice=Unknown or unreported)", "description": "Indicates if the donor's race is unknown or unreported (Checked or Unchecked)."},
+                    {"name": "Race (choice=Other)", "description": "Indicates if the donor's race is categorized as Other (Checked or Unchecked)."},
+                    {"name": "specify other race", "description": "Text specifying the race if 'Other' is checked (e.g., Mixed)."},
+                    {"name": "Hispanic/Latino", "description": "Indicates if the donor identifies as Hispanic or Latino (Yes, No, or Unknown)."},
+                    {"name": "Highest level of education", "description": "Highest educational attainment of the donor (e.g., High School, Bachelors, Graduate)."},
+                    {"name": "Years of education", "description": "Total years of formal education completed by the donor."},
+                    {"name": "APOE Genotype", "description": "APOE gene variant of the donor (e.g., 3/3, 3/4), a genetic risk factor for AD."},
+                    {"name": "Cognitive Status", "description": "Cognitive status at last assessment (e.g., No dementia, Dementia)."},
+                    {"name": "Age of onset cognitive symptoms", "description": "Age when cognitive symptoms first appeared, if applicable."},
+                    {"name": "Age of Dementia diagnosis", "description": "Age at which dementia was diagnosed, if applicable."},
+                    {"name": "Known head injury", "description": "Indicates if the donor had a documented head injury (Yes, No, or Unknown)."},
+                    {"name": "Have they had neuroimaging", "description": "Indicates if neuroimaging was performed (Yes, No, or Unknown)."},
+                    {"name": "Consensus Clinical Dx (choice=Alzheimers disease)", "description": "Indicates if the clinical diagnosis includes Alzheimer's disease (Checked or Unchecked)."},
+                    {"name": "Consensus Clinical Dx (choice=Alzheimers Possible/ Probable)", "description": "Indicates if the clinical diagnosis includes possible or probable AD (Checked or Unchecked)."},
+                    {"name": "Consensus Clinical Dx (choice=Ataxia)", "description": "Indicates if the clinical diagnosis includes Ataxia (Checked or Unchecked)."},
+                    {"name": "Consensus Clinical Dx (choice=Corticobasal Degeneration)", "description": "Indicates if the clinical diagnosis includes Corticobasal Degeneration (Checked or Unchecked)."},
+                    {"name": "Consensus Clinical Dx (choice=Control)", "description": "Indicates if the donor was a control subject (Checked or Unchecked)."},
+                    {"name": "Consensus Clinical Dx (choice=Dementia with Lewy Bodies/ Lewy Body Disease)", "description": "Indicates if the clinical diagnosis includes Dementia with Lewy Bodies or Lewy Body Disease (Checked or Unchecked)."},
+                    {"name": "Consensus Clinical Dx (choice=Frontotemporal lobar degeneration)", "description": "Indicates if the clinical diagnosis includes Frontotemporal lobar degeneration (Checked or Unchecked)."},
+                    {"name": "Consensus Clinical Dx (choice=Huntingtons disease)", "description": "Indicates if the clinical diagnosis includes Huntington's disease (Checked or Unchecked)."},
+                    {"name": "Consensus Clinical Dx (choice=Motor Neuron disease)", "description": "Indicates if the clinical diagnosis includes Motor Neuron disease (Checked or Unchecked)."},
+                    {"name": "Consensus Clinical Dx (choice=Multiple System Atrophy)", "description": "Indicates if the clinical diagnosis includes Multiple System Atrophy (Checked or Unchecked)."},
+                    {"name": "Consensus Clinical Dx (choice=Parkinsons disease)", "description": "Indicates if the clinical diagnosis includes Parkinson's disease (Checked or Unchecked)."},
+                    {"name": "Consensus Clinical Dx (choice=Parkinsons Cognitive Impairment - no dementia)", "description": "Indicates if the clinical diagnosis includes Parkinson's Cognitive Impairment without dementia (Checked or Unchecked)."},
+                    {"name": "Consensus Clinical Dx (choice=Parkinsons Disease Dementia)", "description": "Indicates if the clinical diagnosis includes Parkinson's Disease Dementia (Checked or Unchecked)."},
+                    {"name": "Consensus Clinical Dx (choice=Prion)", "description": "Indicates if the clinical diagnosis includes Prion disease (Checked or Unchecked)."},
+                    {"name": "Consensus Clinical Dx (choice=Progressive Supranuclear Palsy)", "description": "Indicates if the clinical diagnosis includes Progressive Supranuclear Palsy (Checked or Unchecked)."},
+                    {"name": "Consensus Clinical Dx (choice=Taupathy)", "description": "Indicates if the clinical diagnosis includes Taupathy (Checked or Unchecked)."},
+                    {"name": "Consensus Clinical Dx (choice=Vascular Dementia)", "description": "Indicates if the clinical diagnosis includes Vascular Dementia (Checked or Unchecked)."},
+                    {"name": "Consensus Clinical Dx (choice=Unknown)", "description": "Indicates if the clinical diagnosis is unknown (Checked or Unchecked)."},
+                    {"name": "Consensus Clinical Dx (choice=Other)", "description": "Indicates if the clinical diagnosis is categorized as Other (Checked or Unchecked)."},
+                    {"name": "If other Consensus dx, describe", "description": "Text description of the diagnosis if 'Other' is checked (e.g., late onset AD, brain mets)."},
+                    {"name": "Last CASI Score", "description": "Last Cognitive Abilities Screening Instrument (CASI) score, assessing cognitive function."},
+                    {"name": "Interval from last CASI in months", "description": "Time in months between the last CASI assessment and death."},
+                    {"name": "Last MMSE Score", "description": "Last Mini-Mental State Examination (MMSE) score, assessing cognitive impairment."},
+                    {"name": "Interval from last MMSE in months", "description": "Time in months between the last MMSE assessment and death."},
+                    {"name": "Last MOCA Score", "description": "Last Montreal Cognitive Assessment (MOCA) score, assessing cognitive function."},
+                    {"name": "Interval from last MOCA in months", "description": "Time in months between the last MOCA assessment and death."},
+                    {"name": "PMI", "description": "Post-mortem interval, time in hours between death and tissue preservation."},
+                    {"name": "Rapid Frozen Tissue Type", "description": "Method used for rapid freezing of tissue (e.g., Precision Slices)."},
+                    {"name": "Ex Vivo Imaging", "description": "Indicates if ex vivo imaging was performed on the brain (Yes or No)."},
+                    {"name": "Fresh Brain Weight", "description": "Weight of the fresh brain in grams."},
+                    {"name": "Brain pH", "description": "pH level of the brain tissue post-mortem."},
+                    {"name": "Overall AD neuropathological Change", "description": "Summary of AD neuropathological severity (Not AD, Low, Intermediate, High), based on Thal, Braak, and CERAD scores."},
+                    {"name": "Thal", "description": "Thal phase (0-5) indicating amyloid plaque distribution."},
+                    {"name": "Braak", "description": "Braak stage (0-VI) indicating neurofibrillary tangle distribution."},
+                    {"name": "CERAD score", "description": "CERAD score (Absent, Sparse, Moderate, Frequent) indicating neuritic plaque density."},
+                    {"name": "Overall CAA Score", "description": "Severity of cerebral amyloid angiopathy (e.g., Not identified, Mild, Moderate, Severe)."},
+                    {"name": "Highest Lewy Body Disease", "description": "Highest level of Lewy body pathology (e.g., Not Identified, Amygdala-predominant, Limbic, Neocortical)."},
+                    {"name": "Total Microinfarcts (not observed grossly)", "description": "Count of microinfarcts not visible macroscopically."},
+                    {"name": "Total microinfarcts in screening sections", "description": "Count of microinfarcts observed in screening sections."},
+                    {"name": "Atherosclerosis", "description": "Severity of atherosclerosis (e.g., Mild, Moderate, Severe)."},
+                    {"name": "Arteriolosclerosis", "description": "Severity of arteriolosclerosis (e.g., Mild, Moderate, Severe)."},
+                    {"name": "LATE", "description": "Stage of Limbic-predominant Age-related TDP-43 Encephalopathy (e.g., Not Identified, Stage 1, Stage 2, Stage 3)."},
+                    {"name": "RIN", "description": "RNA Integrity Number, indicating RNA quality of the tissue."},
+                    {"name": "Severely Affected Donor", "description": "Indicates if the donor was severely affected by neuropathology (Y or N)."}
+                ]
+            }
+        }
+    ],
+    "intermediate": [],
+    "hypotheses": {
+        "main": [
+            {}
+        ],
+        "intermediate": []
+    },
+    "queries": [
+        [
+            {
+                "qid": 0,
+                "question_type": "visualization",
+                "question": "Visualize the distribution of CERAD scores across increasing ADNC categories as a heatmap. Save the figure as 'cerad_score_distribution_adnc.png' in the current folder."
+            }
+        ]
+    ]
+}

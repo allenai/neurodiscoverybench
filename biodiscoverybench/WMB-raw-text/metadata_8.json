@@ -1,0 +1,56 @@
+{
+    "id": 8,
+    "domain": "biology",
+    "workflow_tags": "neurobiology",
+    "domain_knowledge": "",
+    "datasets": [
+        {
+            "name": "cluster_to_cluster_annotation_membership_pivoted",
+            "description": "This dataset provides detailed annotations for 5,322 cell clusters, classifying them based on neurotransmitter type, class, subclass, and supertype. It includes neurotransmitter types such as Glutamate, GABA, and Dopamine. Such classifications are pivotal for understanding the functional roles of different neuronal populations in the brain.",
+            "columns": {
+                "raw": [
+                    {
+                        "name": "cluster_alias",
+                        "description": "Identifier for the cluster, used to group cells with similar properties for further analysis."
+                    },
+                    {
+                        "name": "neurotransmitter",
+                        "description": "Type of neurotransmitter associated with the cluster, indicating the chemical messenger used for neuron-to-neuron communication."
+                    },
+                    {
+                        "name": "class",
+                        "description": "Class of the cluster, representing a broad categorization of cell types, such as excitatory or inhibitory neurons."
+                    },
+                    {
+                        "name": "subclass",
+                        "description": "Subclass of the cluster, providing a more detailed categorization within the class, reflecting finer distinctions in cell type."
+                    },
+                    {
+                        "name": "supertype",
+                        "description": "Supertype of the cluster, encompassing multiple subclasses, offering a higher-level view of cell type classification."
+                    },
+                    {
+                        "name": "cluster",
+                        "description": "Specific cluster identifier, used in analysis to group and compare similar cells."
+                    }
+                ]
+            }
+        }
+    ],
+    "intermediate": [],
+    "hypotheses": {
+        "main": [
+            {}
+        ],
+        "intermediate": []
+    },
+    "queries": [
+        [
+            {
+                "qid": 0,
+                "question_type": "relationship",
+                "question": "Which subclasses of GABAergic neurons are predominantly found in the RHP region? "
+            }
+        ]
+    ]
+}
