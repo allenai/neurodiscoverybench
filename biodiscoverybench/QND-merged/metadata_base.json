@@ -16,8 +16,7 @@
                     {"name": "Overall AD neuropathological Change", "description": "Overall assessment of Alzheimer's disease neuropathological change, categorized as Not AD, Low, Intermediate, or High."},
                     {"name": "Thal", "description": "Thal phase for amyloid plaque distribution."},
                     {"name": "Braak", "description": "Braak stage for neurofibrillary tangle distribution."},
-                    {"name": "CERAD score", "description": "CERAD (Consortium to Establish a Registry for Alzheimer's Disease) score for neuritic plaque density."},
-                    {"name": "Overall CAA Score", "description": "Overall score for cerebral amyloid angiopathy."}
+                    {"name": "CERAD score", "description": "CERAD (Consortium to Establish a Registry for Alzheimer's Disease) score for neuritic plaque density."}
                 ]
             }
         }
