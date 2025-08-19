@@ -1,0 +1,208 @@
+{
+    "id":5,
+    "domain": "biology",
+    "workflow_tags": "neurobiology",
+    "domain_knowledge": "",
+    "datasets": [
+        {
+            "name": "cell_metadata.csv",
+            "description": "The 'cell_metadata' dataset contains comprehensive metadata for over 4 million individual mouse brain cells, sourced from 345 distinct donors. It details unique identifiers, spatial coordinates, and experimental conditions across 28 distinct brain regions, such as the RHP and ACA. This dataset is essential for spatial transcriptomics studies, allowing researchers to map gene expression patterns to specific brain regions and understand the cellular architecture of the mouse brain.",
+            "columns": {
+                "raw": [
+                    {
+                        "name": "cell_label",
+                        "description": "A unique identifier assigned to each of the 4,042,976 cells, crucial for tracking and referencing individual cells across experiments."
+                    },
+                    {
+                        "name": "cell_barcode",
+                        "description": "A unique sequence used to tag individual cells, enabling the differentiation and isolation of cells in high-throughput assays."
+                    },
+                    {
+                        "name": "barcoded_cell_sample_label",
+                        "description": "A label linking each cell's barcode to its specific sample, providing context about the source or experimental condition of the cell."
+                    },
+                    {
+                        "name": "library_label",
+                        "description": "Identifier for the sequencing library, representing a batch of DNA fragments prepared for sequencing and analysis."
+                    },
+                    {
+                        "name": "feature_matrix_label",
+                        "description": "Denotes the specific feature matrix used, which typically contains quantitative data such as gene expression levels across various cells."
+                    },
+                    {
+                        "name": "entity",
+                        "description": "Represents the biological entity being studied, in this case, 'cell', highlighting the focus on cellular-level analyses."
+                    },
+                    {
+                        "name": "brain_section_label",
+                        "description": "Label for the specific section of the brain from which the cell was isolated, relevant in studies examining the structural and functional organization of the brain."
+                    },
+                    {
+                        "name": "library_method",
+                        "description": "The technique or protocol used to prepare the sequencing library, such as 10Xv3, indicating the technological approach employed in data generation."
+                    },
+                    {
+                        "name": "region_of_interest_acronym",
+                        "description": "Acronym for the specific region of interest within the brain, often used in neurobiology to refer to distinct anatomical structures."
+                    },
+                    {
+                        "name": "donor_label",
+                        "description": "Identifier for the donor organism from which the biological sample was obtained, important for tracking genetic and phenotypic information."
+                    },
+                    {
+                        "name": "donor_genotype",
+                        "description": "The genetic makeup of the donor, which can influence the characteristics of the cells derived from them, relevant in genetic studies."
+                    },
+                    {
+                        "name": "donor_sex",
+                        "description": "The biological sex of the donor, which can be relevant in studies of sex-specific differences in brain structure and function."
+                    },
+                    {
+                        "name": "dataset_label",
+                        "description": "Identifier for the dataset or experiment, useful for distinguishing between different experiments or data collections."
+                    },
+                    {
+                        "name": "x",
+                        "description": "X-coordinate for spatial localization of the cell within the brain, used in spatial transcriptomics to map cells to anatomical locations."
+                    },
+                    {
+                        "name": "y",
+                        "description": "Y-coordinate for spatial localization of the cell within the brain, complementing the x-coordinate for precise mapping."
+                    },
+                    {
+                        "name": "cluster_alias",
+                        "description": "Alias for a group of cells that have been clustered together based on similar characteristics, such as gene expression profiles, aiding in the identification of cell types and states."
+                    }
+                ]
+            }
+        },
+        {
+            "name": "cluster_to_cluster_annotation_membership_pivoted",
+            "description": "This dataset provides detailed annotations for 5,322 cell clusters, classifying them based on neurotransmitter type, class, subclass, and supertype. It includes neurotransmitter types such as Glutamate, GABA, and Dopamine. Such classifications are pivotal for understanding the functional roles of different neuronal populations in the brain.",
+            "columns": {
+                "raw": [
+                    {
+                        "name": "cluster_alias",
+                        "description": "Identifier for the cluster, used to group cells with similar properties for further analysis."
+                    },
+                    {
+                        "name": "neurotransmitter",
+                        "description": "Type of neurotransmitter associated with the cluster, indicating the chemical messenger used for neuron-to-neuron communication."
+                    },
+                    {
+                        "name": "class",
+                        "description": "Class of the cluster, representing a broad categorization of cell types, such as excitatory or inhibitory neurons."
+                    },
+                    {
+                        "name": "subclass",
+                        "description": "Subclass of the cluster, providing a more detailed categorization within the class, reflecting finer distinctions in cell type."
+                    },
+                    {
+                        "name": "supertype",
+                        "description": "Supertype of the cluster, encompassing multiple subclasses, offering a higher-level view of cell type classification."
+                    },
+                    {
+                        "name": "cluster",
+                        "description": "Specific cluster identifier, used in analysis to group and compare similar cells."
+                    }
+                ]
+            }
+        },
+        {
+            "name": "pivot.csv",
+            "description": "This dataset provides a comprehensive overview of cell clusters and their annotations within the mouse brain. It includes detailed information on neurotransmitter types and hierarchical classifications such as class, subclass, supertype, and cluster, which are essential for understanding the functional diversity and specialization of brain cells.",
+            "columns": {
+                "raw": [
+                    {
+                        "name": "cluster_annotation_term_set_name",
+                        "description": "This column denotes the name of the annotation term set, which specifies the type of classification applied to the cell clusters. For instance, it might indicate whether the classification pertains to neurotransmitter type, cell class, or another categorization, thus providing insight into the biological role and characteristics of the clusters."
+                    },
+                    {
+                        "name": "neurotransmitter",
+                        "description": "This column identifies the type of neurotransmitter associated with each cell cluster, such as Glutamate (Glut). Neurotransmitters are chemical messengers that facilitate communication between neurons, and their identification is crucial for understanding the signaling pathways and functional roles of different cell types in the nervous system."
+                    },
+                    {
+                        "name": "class",
+                        "description": "The class column categorizes cells into broad types based on their general characteristics and functions. This high-level classification helps in distinguishing major cell types, such as neuronal or glial cells, and serves as a foundational step in the hierarchical classification process."
+                    },
+                    {
+                        "name": "subclass",
+                        "description": "This column provides a more detailed categorization within the cell type, offering finer distinctions between cells that belong to the same class. Subclassification allows researchers to explore the diversity and specialization within broader cell types, aiding in the identification of unique functional roles and properties."
+                    },
+                    {
+                        "name": "supertype",
+                        "description": "The supertype column represents an even higher-level classification that encompasses multiple subclasses. It provides a broader context for understanding the relationships and similarities between different cell types, facilitating the study of overarching patterns and themes in brain cell organization."
+                    },
+                    {
+                        "name": "cluster",
+                        "description": "This column assigns a specific cluster designation to each cell, grouping similar cells based on shared characteristics such as gene expression profiles. Clustering is a critical analytical technique for identifying patterns and associations within complex biological data, enabling researchers to infer functional similarities and differences among cells."
+                    }
+                ]
+            }
+        },
+        {
+            "name": "result.csv",
+            "description": "This dataset offers a detailed summary of the cluster annotations within the mouse brain, providing valuable insights into the number of clusters and cells associated with each annotation term. It serves as a key resource for understanding the distribution and prevalence of different cell types and their functional annotations in the brain.",
+            "columns": {
+                "raw": [
+                    {
+                        "name": "name",
+                        "description": "This column contains the name of the cluster annotation, which represents the specific classification term applied to the cell cluster. These names are crucial for identifying and referencing the different categories used in the dataset, facilitating communication and analysis of the data."
+                    },
+                    {
+                        "name": "cluster_annotation_term_set_label",
+                        "description": "This column provides a label for the term set used in annotation, indicating the source or type of classification applied. It helps in organizing and distinguishing between different sets of terms, ensuring clarity and consistency in the classification process."
+                    },
+                    {
+                        "name": "parent_term_label",
+                        "description": "The parent term label identifies the overarching category or group to which a specific annotation term belongs. It provides context for the hierarchical classification, helping to understand the relationships and dependencies between different annotation terms."
+                    },
+                    {
+                        "name": "parent_term_set_label",
+                        "description": "This column contains the label for the parent term set, which is used for organizing terms hierarchically. It serves as a reference point for understanding the structure and organization of the classification system, aiding in the interpretation and analysis of the data."
+                    },
+                    {
+                        "name": "term_set_order",
+                        "description": "The term set order indicates the sequential arrangement of the term set, used for organizing data and ensuring a logical flow in the classification process. It provides a framework for navigating the dataset and understanding the progression of terms within the classification hierarchy."
+                    },
+                    {
+                        "name": "term_order",
+                        "description": "This column specifies the order of the term within the set, indicating its position relative to other terms. It is essential for maintaining the structure and organization of the classification system, ensuring that terms are presented in a coherent and logical manner."
+                    },
+                    {
+                        "name": "cluster_annotation_term_set_name",
+                        "description": "Similar to the pivot dataset, this column denotes the name of the annotation term set, specifying the type of classification applied to the clusters. It provides context for understanding the nature and scope of the annotations, aiding in the interpretation and analysis of the data."
+                    },
+                    {
+                        "name": "color_hex_triplet",
+                        "description": "This column contains the color code used for visual representation of annotations. Color coding is an important tool for data visualization, enabling researchers to quickly and easily identify patterns, trends, and relationships within the dataset."
+                    },
+                    {
+                        "name": "number_of_clusters",
+                        "description": "This column provides the number of clusters associated with each annotation term, offering insights into the prevalence and distribution of different cell types and their classifications within the brain. It is a key metric for understanding the diversity and complexity of the cellular landscape."
+                    },
+                    {
+                        "name": "number_of_cells",
+                        "description": "This column indicates the number of cells associated with each annotation term, providing a quantitative measure of the abundance and representation of different cell types in the dataset. It is crucial for assessing the scale and scope of the annotations, informing analyses and interpretations of the data."
+                    }
+                ]
+            }
+        }
+    ],
+    "intermediate": [],
+    "hypotheses": {
+        "main": [
+            {}
+        ],
+        "intermediate": []
+    },
+    "queries": [
+        [
+            {
+                "qid": 0,
+                "question_type": "visualization",
+                "question": "Plot a hierarchical plot of subclass and neurotransmitter, grouped by cluster, filtered by class '24 MY Glut'. Save the figure as 'subclass_distribution_5.png' in the current folder."
+            }
+        ]
+    ]
+}
