@@ -1,0 +1,106 @@
+{
+    "id": 0,
+    "domain": "genomics",
+    "workflow_tags": "visualization",
+    "domain_knowledge": "",
+    "datasets": [
+        {
+            "name": "genes.csv",
+            "description": "This dataset contains paired gene expression data for 33 individuals, with each pair representing expression levels before infection (NI2) and after infection (YP2). Each row corresponds to a gene (identified by Ensembl ID in GeneName and gene symbol), except for the first row (GeneName: 'TotalCountsForNormalization->'), which provides total expression counts across all genes for normalization. Columns include gene identifiers and expression counts for each individual’s pre- and post-infection samples, suitable for differential expression analysis such as log_2 fold-changes.",
+            "columns": {
+                "raw": [
+                    {
+                        "name": "GeneName",
+                        "description": "Ensembl ID for each gene (e.g., ENSG00000164307) in all rows except the first, where it is 'TotalCountsForNormalization->' to indicate total expression counts across all genes for each sample, used for normalization."
+                    },
+                    {
+                        "name": "GeneSymbol",
+                        "description": "Standard gene symbol (e.g., ERAP1, ERAP2, LNPEP, ICOS, CTLA4) or '-' for non-gene rows (e.g., the normalization row)."
+                    },
+                    {"name": "AF159_NI2", "description": "Expression count for individual AF159 before infection (non-infected, NI2)."},
+                    {"name": "AF159_YP2", "description": "Expression count for individual AF159 after infection (YP2)."},
+                    {"name": "AF163_NI2", "description": "Expression count for individual AF163 before infection (NI2)."},
+                    {"name": "AF163_YP2", "description": "Expression count for individual AF163 after infection (YP2)."},
+                    {"name": "AF167_NI2", "description": "Expression count for individual AF167 before infection (NI2)."},
+                    {"name": "AF167_YP2", "description": "Expression count for individual AF167 after infection (YP2)."},
+                    {"name": "AF169_NI2", "description": "Expression count for individual AF169 before infection (NI2)."},
+                    {"name": "AF169_YP2", "description": "Expression count for individual AF169 after infection (YP2)."},
+                    {"name": "EU288_NI2", "description": "Expression count for individual EU288 before infection (NI2)."},
+                    {"name": "EU288_YP2", "description": "Expression count for individual EU288 after infection (YP2)."},
+                    {"name": "EU298_NI2", "description": "Expression count for individual EU298 before infection (NI2)."},
+                    {"name": "EU298_YP2", "description": "Expression count for individual EU298 after infection (YP2)."},
+                    {"name": "AF151_NI2", "description": "Expression count for individual AF151 before infection (NI2)."},
+                    {"name": "AF151_YP2", "description": "Expression count for individual AF151 after infection (YP2)."},
+                    {"name": "AF165_YP2", "description": "Expression count for individual AF165 after infection (YP2)."},
+                    {"name": "EU270_NI2", "description": "Expression count for individual EU270 before infection (NI2)."},
+                    {"name": "EU270_YP2", "description": "Expression count for individual EU270 after infection (YP2)."},
+                    {"name": "EU294_NI2", "description": "Expression count for individual EU294 before infection (NI2)."},
+                    {"name": "EU294_YP2", "description": "Expression count for individual EU294 after infection (YP2)."},
+                    {"name": "EU296_NI2", "description": "Expression count for individual EU296 before infection (NI2)."},
+                    {"name": "EU296_YP2", "description": "Expression count for individual EU296 after infection (YP2)."},
+                    {"name": "EU300_NI2", "description": "Expression count for individual EU300 before infection (NI2)."},
+                    {"name": "EU300_YP2", "description": "Expression count for individual EU300 after infection (YP2)."},
+                    {"name": "AF139_NI2", "description": "Expression count for individual AF139 before infection (NI2)."},
+                    {"name": "AF139_YP2", "description": "Expression count for individual AF139 after infection (YP2)."},
+                    {"name": "AF143_NI2", "description": "Expression count for individual AF143 before infection (NI2)."},
+                    {"name": "AF143_YP2", "description": "Expression count for individual AF143 after infection (YP2)."},
+                    {"name": "AF145_NI2", "description": "Expression count for individual AF145 before infection (NI2)."},
+                    {"name": "AF145_YP2", "description": "Expression count for individual AF145 after infection (YP2)."},
+                    {"name": "AF153_NI2", "description": "Expression count for individual AF153 before infection (NI2)."},
+                    {"name": "AF153_YP2", "description": "Expression count for individual AF153 after infection (YP2)."},
+                    {"name": "AF165_NI2", "description": "Expression count for individual AF165 before infection (NI2)."},
+                    {"name": "EU276_NI2", "description": "Expression count for individual EU276 before infection (NI2)."},
+                    {"name": "EU276_YP2", "description": "Expression count for individual EU276 after infection (YP2)."},
+                    {"name": "EU278_NI2", "description": "Expression count for individual EU278 before infection (NI2)."},
+                    {"name": "EU278_YP2", "description": "Expression count for individual EU278 after infection (YP2)."},
+                    {"name": "EU282_NI2", "description": "Expression count for individual EU282 before infection (NI2)."},
+                    {"name": "EU282_YP2", "description": "Expression count for individual EU282 after infection (YP2)."},
+                    {"name": "AF119_NI2", "description": "Expression count for individual AF119 before infection (NI2)."},
+                    {"name": "AF119_YP2", "description": "Expression count for individual AF119 after infection (YP2)."},
+                    {"name": "AF121_NI2", "description": "Expression count for individual AF121 before infection (NI2)."},
+                    {"name": "AF121_YP2", "description": "Expression count for individual AF121 after infection (YP2)."},
+                    {"name": "AF127_NI2", "description": "Expression count for individual AF127 before infection (NI2)."},
+                    {"name": "AF127_YP2", "description": "Expression count for individual AF127 after infection (YP2)."},
+                    {"name": "AF129_NI2", "description": "Expression count for individual AF129 before infection (NI2)."},
+                    {"name": "AF129_YP2", "description": "Expression count for individual AF129 after infection (YP2)."},
+                    {"name": "AF131_NI2", "description": "Expression count for individual AF131 before infection (NI2)."},
+                    {"name": "AF131_YP2", "description": "Expression count for individual AF131 after infection (YP2)."},
+                    {"name": "AF133_NI2", "description": "Expression count for individual AF133 before infection (NI2)."},
+                    {"name": "AF133_YP2", "description": "Expression count for individual AF133 after infection (YP2)."},
+                    {"name": "AF155_NI2", "description": "Expression count for individual AF155 before infection (NI2)."},
+                    {"name": "AF155_YP2", "description": "Expression count for individual AF155 after infection (YP2)."},
+                    {"name": "EU256_NI2", "description": "Expression count for individual EU256 before infection (NI2)."},
+                    {"name": "EU256_YP2", "description": "Expression count for individual EU256 after infection (YP2)."},
+                    {"name": "EU258_NI2", "description": "Expression count for individual EU258 before infection (NI2)."},
+                    {"name": "EU258_YP2", "description": "Expression count for individual EU258 after infection (YP2)."},
+                    {"name": "EU262_NI2", "description": "Expression count for individual EU262 before infection (NI2)."},
+                    {"name": "EU262_YP2", "description": "Expression count for individual EU262 after infection (YP2)."},
+                    {"name": "EU264_NI2", "description": "Expression count for individual EU264 before infection (NI2)."},
+                    {"name": "EU264_YP2", "description": "Expression count for individual EU264 after infection (YP2)."},
+                    {"name": "EU268_NI2", "description": "Expression count for individual EU268 before infection (NI2)."},
+                    {"name": "EU268_YP2", "description": "Expression count for individual EU268 after infection (YP2)."},
+                    {"name": "EU284_NI2", "description": "Expression count for individual EU284 before infection (NI2)."},
+                    {"name": "EU284_YP2", "description": "Expression count for individual EU284 after infection (YP2)."},
+                    {"name": "EU286_NI2", "description": "Expression count for individual EU286 before infection (NI2)."},
+                    {"name": "EU286_YP2", "description": "Expression count for individual EU286 after infection (YP2)."}
+                ]
+            }
+        }
+    ],
+    "intermediate": [],
+    "hypotheses": {
+        "main": [
+            {}
+        ],
+        "intermediate": []
+    },
+    "queries": [
+        [
+            {
+                "qid": 0,
+                "question_type": "visualization",
+                "question": "Visualize the distribution of log_2 fold-change for ERAP1 using violin plot, overlaying individual data points and highlighting the mean ± standard deviation and save it as ERAP1_foldchange_0.png"
+            }
+        ]
+    ]
+}
