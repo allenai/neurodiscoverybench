@@ -77,7 +77,7 @@
             }
         },
         {
-            "name": "cluster_to_cluster_annotation_membership_pivoted",
+            "name": "cluster_to_cluster_annotation_membership_pivoted.csv",
             "description": "This dataset provides detailed annotations for 5,322 cell clusters, classifying them based on neurotransmitter type, class, subclass, and supertype. It includes neurotransmitter types such as Glutamate, GABA, and Dopamine. Such classifications are pivotal for understanding the functional roles of different neuronal populations in the brain.",
             "columns": {
                 "raw": [
