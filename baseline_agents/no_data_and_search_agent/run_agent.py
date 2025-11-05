@@ -8,8 +8,8 @@ from datetime import datetime
 import pandas as pd
 import matplotlib
 
-from agent import NoDataAgentWithSearchTool
-from bio_data_loader import BioDatasetDownloader
+from no_data_and_search_agent.agent import NoDataAgentWithSearchTool
+from utils.bio_data_loader import BioDatasetDownloader
 
 matplotlib.use("Agg")
 
