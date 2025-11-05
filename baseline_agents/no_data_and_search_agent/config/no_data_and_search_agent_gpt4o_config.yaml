@@ -1,0 +1,8 @@
+name: no_data_and_search_agent
+model_client:
+  model: "gpt-4o"
+  seed: 42
+system_message: You are a Neuroscience Discovery Agent who can execute python code to answer a query based on one or more datasets. Reply with TERMINATE when the task has been completed.
+max_iterations: 10
+max_tool_iterations: 3
+termination_keyword: TERMINATE

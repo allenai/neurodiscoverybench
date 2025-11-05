@@ -1,0 +1,36 @@
+# setup
+autogen-agentchat==0.7.4
+autogen-ext[openai, diskcache, azure]==0.7.4
+IPython==8.12.3
+termcolor==2.5.0
+pyyaml==6.0.2
+nest_asyncio==1.6.0
+click==8.1.8
+tenacity~=9.0.0
+modal
+nora_lib-impl==1.4.0
+pydantic==2.10.6
+pydantic_core==2.27.2
+beautifulsoup4==4.13.4
+google-cloud-logging~=3.12.1
+
+# analysis
+pandas==2.2.3
+numpy==2.2.2
+matplotlib==3.10.0
+seaborn==0.13.2
+scikit-learn==1.6.1
+scipy==1.15.1
+statsmodels==0.14.4
+
+# autonora
+pdfminer==20191125
+
+# development
+pytest==8.4.*
+pytest-timeout==2.4.*
+
+# neurodiscoverybench
+gdown==5.2.0
+pydantic==2.10.6
+openpyxl
