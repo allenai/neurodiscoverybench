@@ -198,8 +198,8 @@ async def main(
 
 if __name__ == "__main__":
     data_loc = "neurodiscoverybench"
-    config_file = "agents/no_data_agent/config/no_data_agent_gpt4o_config.yaml"
-    setup_datasets(dataset_config="agents/no_data_agent/bio_datasets_config.yaml")
+    config_file = "baseline_agents/no_data_agent/config/no_data_agent_gpt4o_config.yaml"
+    setup_datasets(dataset_config="baseline_agents/no_data_agent/bio_datasets_config.yaml")
     asyncio.run(
         main(
             data_loc=data_loc,

@@ -75,7 +75,7 @@ class NoDataAgent:
 
 
 if __name__ == "__main__":
-    config_file = "agents/no_data_agent/config/no_data_agent_gpt4o_config.yaml"
+    config_file = "baseline_agents/no_data_agent/config/no_data_agent_gpt4o_config.yaml"
     log_file = "tmp.jsonl"
     no_code_agent = NoDataAgent(config_file, log_file)
     asyncio.run(

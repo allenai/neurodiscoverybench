@@ -122,7 +122,7 @@ class BioDatasetDownloader:
 if __name__ == "__main__":
     try:
         dataset_loader = BioDatasetDownloader(
-            config_path="agents/bio_data_loader/bio_datasets_config.yaml"
+            config_path="baseline_agents/utils/bio_datasets_config.yaml"
         )
         dataset_loader.download_all_datasets()
     except Exception as e:
