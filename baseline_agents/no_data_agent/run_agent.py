@@ -1,15 +1,11 @@
-import asyncio
-import glob
-import json
 import os
+from pathlib import Path
 import shutil
 from datetime import datetime
 
-import pandas as pd
 import matplotlib
 
 from agent import NoDataAgent
-from bio_data_loader import BioDatasetDownloader
 
 matplotlib.use("Agg")
 
@@ -17,33 +13,6 @@ matplotlib.use("Agg")
 DEFAULT_EXP_NAME = datetime.now().strftime("%Y-%m-%d--%H-%M-%S")
 LOG_DIR = "logs"
 os.makedirs(LOG_DIR, exist_ok=True)
-
-
-def setup_datasets(dataset_config: str = "bio_datasets_config.yaml"):
-    dataset_loader = BioDatasetDownloader(config_path=dataset_config)
-    dataset_loader.download_all_datasets()
-    dataset_loader.copy_files_to_locations(
-        locations=[
-            "neurodiscoverybench/WMB-raw-fig/",
-            "neurodiscoverybench/WMB-raw-no-traces/",
-            "neurodiscoverybench/WMB-raw-text",
-        ],
-        exclude_files=["cell_subsampled.csv"],
-    )
-    dataset_loader.copy_files_to_locations(
-        locations=[
-            "neurodiscoverybench/WMB-processed-fig/",
-            "neurodiscoverybench/WMB-processed-text/",
-        ],
-        exclude_files=[
-            "cell_metadata.csv",
-            "color.csv",
-            "pivot.csv",
-            "result.csv",
-            "term_set.csv",
-            "cluster_to_cluster_annotation_membership_pivoted.csv",
-        ],
-    )
 
 
 def format_query(
@@ -104,37 +73,6 @@ the SCIENTIFIC HYPOTHESIS is a natural language hypothesis, clearly stating the 
     return formatted_query
 
 
-def get_metadata(
-    data_loc: str,
-) -> pd.DataFrame:
-    data = pd.DataFrame(columns=["unique_id", "query", "metadata"])
-    metadata_files = []
-    if os.path.isdir(data_loc):
-        metadata_files = glob.glob(os.path.join(data_loc, "**/*.json"), recursive=True)
-    else:
-        metadata_files = [data_loc]
-
-    for file in metadata_files:
-        with open(file) as f:
-            dataset_metadata = json.load(f)
-            for q in dataset_metadata["queries"][0]:
-                path_splits = file.split("/")
-                dataset_name = path_splits[-2]
-                metadata_name = path_splits[-1].split(".")[0].split("_")[-1]
-                query_id = q["qid"]
-                uniq_id = f"{dataset_name}||{metadata_name}||{query_id}"
-                instance = {
-                    "unique_id": uniq_id,
-                    "query": q["question"],
-                    "metadata": dataset_metadata,
-                    "data_dir": os.path.dirname(file),
-                }
-                data = pd.concat([data, pd.DataFrame([instance])])
-
-    data = data.sort_values(by="unique_id").reset_index(drop=True)
-    return data
-
-
 def copy_png_files(source_dir, destination_dir):
     """
     Copies all .png files from source_dir to destination_dir.
@@ -157,54 +95,31 @@ def copy_png_files(source_dir, destination_dir):
             print(f"Moved: {filename}")
 
 
-async def main(
-    data_loc: str,
+async def run_agent(
+    data_row: dict,
     config_file: str,
-    domain_knowledge: bool = True,
-    workflow_tags: bool = True,
-    experiment_name: str = DEFAULT_EXP_NAME,
+    log_file_path: str,
+    domain_knowledge: bool = False,
+    workflow_tags: bool = False,
 ):
-    metadata = get_metadata(data_loc=data_loc)
-    metadata.to_csv("neurodiscoverybench_data.csv")
+    cur_dir = Path(log_file_path).parent
 
-    for idx, row in metadata.iterrows():
-        row = row.to_dict()
-        query = row["query"]
-        data = row["metadata"]
-        data_dir = row["data_dir"]
-        logfilename = row["unique_id"].replace("||", "_")
+    query = data_row["query"]
+    data = data_row["metadata"]
+    data_dir = data_row["data_dir"]
 
-        dataset_name = row["unique_id"].split("||")[0]
-        cur_dir = os.path.join(LOG_DIR, experiment_name, dataset_name)
-        os.makedirs(cur_dir, exist_ok=True)
-        log_file_path = os.path.join(cur_dir, logfilename + ".jsonl")
-
-        no_data_agent = NoDataAgent(
-            config_file=config_file,
-            log_file=log_file_path,
-        )
-
-        data_input = {"metadata": data, "data_folder": data_dir, "query": query}
-
-        query = format_query(
-            input=data_input,
-            provide_domain_knowledge=domain_knowledge,
-            provide_workflow_tags=workflow_tags,
-        )
-
-        await no_data_agent.run(task=query)
-        copy_png_files(source_dir=".", destination_dir=cur_dir)
-
-
-if __name__ == "__main__":
-    data_loc = "neurodiscoverybench"
-    config_file = "baseline_agents/no_data_agent/config/no_data_agent_gpt4o_config.yaml"
-    setup_datasets(dataset_config="baseline_agents/no_data_agent/bio_datasets_config.yaml")
-    asyncio.run(
-        main(
-            data_loc=data_loc,
-            config_file=config_file,
-            domain_knowledge=False,
-            workflow_tags=True,
-        )
+    no_data_agent = NoDataAgent(
+        config_file=config_file,
+        log_file=log_file_path,
     )
+
+    data_input = {"metadata": data, "data_folder": data_dir, "query": query}
+
+    query = format_query(
+        input=data_input,
+        provide_domain_knowledge=domain_knowledge,
+        provide_workflow_tags=workflow_tags,
+    )
+
+    await no_data_agent.run(task=query)
+    copy_png_files(source_dir=".", destination_dir=cur_dir)
