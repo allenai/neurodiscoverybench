@@ -11,8 +11,9 @@ It builds on landmark open datasets by the Allen Institute and includes workflow
 - Gabitto, M.I., Travaglini, K.J., Rachleff, V.M. et al. Integrated multimodal cell atlas of Alzheimer’s disease. Nat Neurosci 27, 2366–2383 (2024). https://doi.org/10.1038/s41593-024-01774-5
 
 
-<img width="746" alt="image" src="https://github.com/user-attachments/assets/26968034-a19b-4508-944e-9bb70020428d" />
+<img width="746" alt="image" src="https://github.com/user-attachments/assets/df85845d-cb1d-4cc1-8ff4-f675d0b52fed" />
 
+<!-- <img width="792" height="703" alt="image" src="https://github.com/user-attachments/assets/df85845d-cb1d-4cc1-8ff4-f675d0b52fed" /> -->
 
 ## 🚀 Getting Started
 
