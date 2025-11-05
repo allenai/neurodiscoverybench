@@ -1,0 +1,35 @@
+# Sample Bio Datasets Config
+
+# datasets:
+#   dataset_name:              <- A unique identifier for the dataset. This name is used to reference the dataset programmatically.
+#       file_id:               <- The Google Drive file ID associated with the dataset. This is used for downloading the file.
+#       filename:              <- The desired local filename (including extension) after the file is downloaded.
+
+datasets:
+  cell_subsampled:
+    file_id: 1ePHSkFG0A3NaXemItLrIhB3Yh8PV-ZR0
+    filename: cell_subsampled.csv
+
+  pivot:
+    file_id: 1awkW1KJMqvEgchJTvQ9kNCblyhx7PHu7
+    filename: pivot.csv
+
+  result:
+    file_id: 1NHJD0d1vGolOTWqpYEOmwFvAIx2NRrCG
+    filename: result.csv
+
+  color:
+    file_id: 1oOsbeS5B442yELKAh_ZQ-l0o-AvsV3bl
+    filename: color.csv
+
+  term_set:
+    file_id: 1tD9zaz2-90O0NDDj7hWMbIVInf7LiVe5
+    filename: term_set.csv
+
+  cluster_to_cluster_annotation_membership_pivoted:
+    file_id: 1l_HsqoU-FkkxapQiN25tJA3YKuljqKY_
+    filename: cluster_to_cluster_annotation_membership_pivoted.csv
+
+  cell_metadata:
+    file_id: 1HQNG2Y0NUz81f-41pP3EouD-CnkD_N2h
+    filename: cell_metadata.csv
