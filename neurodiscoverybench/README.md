@@ -2,7 +2,7 @@
 
 ## 🗂️ Structure
 
-Each folder in `neurodiscoverybench` represents a subset of benchmark tasks, each of which include metadata, dataset info and benchmark questions.
+Each folder in `neurodiscoverybench` represents a subset of benchmark tasks - each of which include metadata, dataset files and benchmark questions.
 
 | **Benchmark Folder**        | **Question Count** | **Subset Description**                                                                                                                                                                            |
 | :-------------------------- | :-------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -12,14 +12,14 @@ Each folder in `neurodiscoverybench` represents a subset of benchmark tasks, eac
 | **`WMB-raw-text`**          |     4     | Tasks from the *Whole Mouse Brain Atlas*, using raw data that requires substantial data wrangling and filtering by the agent. All the hypotheses in this folder are text based. |
 | **`WMB-raw-fig`**           |     18    | Visualization tasks from raw WMB data, requiring figure generation based on unprocessed datasets.                                                                                  |
 | **`WMB-raw-no-traces`**     |     10    | Harder WMB subset without gold execution traces, extracted directly from the paper for validating benchmark robustness.                                                                            |
-| **`WMB-processed-text`**    |     4     | Text-based tasks on preprocessed WMB data, where intermediate cleaning and aggregation steps are already applied.                                                                          |
+| **`WMB-processed-text`**    |     4     | Text-based tasks on preprocessed WMB data, where intermediate cleaning and aggregation steps are already applied for easier further analysis.                                                                          |
 | **`WMB-processed-fig`**     |     18    | Figure output based tasks from preprocessed WMB data, allowing agents to focus on basic analysis and visualization.                                     |
 
 
 
 ## 🧩 Naming Conventions
 
-Datasets are organized along three key axes:
+Datasets are organized along three key axes (paper, task-type, data-level):
 
 * **Source paper:**
 
@@ -30,7 +30,7 @@ Datasets are organized along three key axes:
 
   * **text** → text based output
   * **fig** → figure based output 
-* **Data processing level (for WMB):**
+* **Data processing level (not applicable for all):**
 
   * **raw** → agents must perform heavy data manipulation directly on the raw dataset
   * **processed** → intermediate preprocessing performed, simplifying analysis
