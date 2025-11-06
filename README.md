@@ -106,21 +106,18 @@ python3 eval/eval.py --help
 ```
 The output will show:
 ```bash
-Usage: eval.py [OPTIONS]
+Usage: eval.py [OPTIONS] AGENT_RESULTS_CSV
 
   Evaluate agent-generated hypotheses and compute scores for each task.
 
 Options:
-  --agent_results_csv PATH   Path to the CSV file produced by the agent run.
-                             The file should contain tasks and corresponding
-                             generated hypotheses.  [required]
+  -o, --output-csv PATH  Path to save evaluated CSV file. If not provided, a
+                         file with '_evaluated' suffix will be created.
 
-  --output_csv PATH          Path to save the evaluated CSV file. If not
-                             provided, a new file with "_evaluated" suffix
-                             will be created next to the input file.
+  -m, --eval-model TEXT  Model to use for evaluating the samples.  [default:
+                         gpt-4o]
 
-  --help                     Show this message and exit.
-
+  --help                 Show this message and exit.
 ```
 
 

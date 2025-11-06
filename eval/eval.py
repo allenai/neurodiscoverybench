@@ -502,6 +502,7 @@ async def main(
     help="Model to use for evaluating the samples.",
 )
 def cli(agent_results_csv: str, output_csv: str | None, eval_model: str) -> None:
+    "Evaluate agent-generated hypotheses and compute scores for each task."
     asyncio.run(main(agent_results_csv, output_csv, eval_model))
 
 
