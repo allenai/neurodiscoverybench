@@ -6,14 +6,14 @@ Each folder in `neurodiscoverybench` represents a subset of benchmark tasks, eac
 
 | **Benchmark Folder**        | **Question Count** | **Subset Description**                                                                                                                                                                            |
 | :-------------------------- | :-------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`WMB-raw-text`**          |     4     | Tasks from the *Whole Mouse Brain Atlas*, using raw data that requires substantial data wrangling and filtering by the agent. All the hypotheses in this folder are text based. |
-| **`WMB-raw-fig`**           |     18    | Visualization tasks from raw WMB data, requiring code-to-figure generation based on unprocessed datasets.                                                                                  |
-| **`WMB-raw-no-traces`**     |     10    | Harder WMB subset without gold execution traces, extracted directly from the paper for validating benchmark robustness.                                                                            |
-| **`WMB-processed-text`**    |     4     | Text-based tasks on preprocessed WMB data, where intermediate cleaning and aggregation steps are already applied.                                                                          |
-| **`WMB-processed-fig`**     |     18    | Figure output based tasks from preprocessed WMB data, allowing agents to focus on basic analysis and visualization.                                     |
 | **`SEA-AD-text`**           |     7     | Tasks from the *Seattle Alzheimer’s Disease (SEA-AD)* atlas. All the hypotheses in this folder are text based.                    |
 | **`SEA-AD-fig`**            |     3     | Figure output based tasks from SEA-AD exploring Braak/Thal staging etc. across disease progression.                                                                      |
 | **`BlackDeath-Immune-fig`** |     5     | Figure-generation tasks from *Evolution of Immune Genes and the Black Death*, analyzing evolutionary signals in immune gene variants.                                                      |
+| **`WMB-raw-text`**          |     4     | Tasks from the *Whole Mouse Brain Atlas*, using raw data that requires substantial data wrangling and filtering by the agent. All the hypotheses in this folder are text based. |
+| **`WMB-raw-fig`**           |     18    | Visualization tasks from raw WMB data, requiring figure generation based on unprocessed datasets.                                                                                  |
+| **`WMB-raw-no-traces`**     |     10    | Harder WMB subset without gold execution traces, extracted directly from the paper for validating benchmark robustness.                                                                            |
+| **`WMB-processed-text`**    |     4     | Text-based tasks on preprocessed WMB data, where intermediate cleaning and aggregation steps are already applied.                                                                          |
+| **`WMB-processed-fig`**     |     18    | Figure output based tasks from preprocessed WMB data, allowing agents to focus on basic analysis and visualization.                                     |
 
 
 
