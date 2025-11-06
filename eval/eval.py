@@ -192,7 +192,7 @@ async def ask_dimension_question(
 async def extract_ctx(
     query, hypo, workflow, dataset_meta, llm_used, use_column_metadata=True
 ):
-    extraction_prompt = """\
+    extraction_prompt = f"""\
         Given a set of dataset columns, a ground-truth hypothesis, and the analysis workflow used, your task is to extract three dimensions that define the hypothesis: Context, Variables, and Relations. \
         Here are the definitions for these dimensions:
         - Contexts: Boundary conditions that limit the scope of a hypothesis. E.g., “for men over \
