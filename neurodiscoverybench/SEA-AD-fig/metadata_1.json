@@ -91,7 +91,7 @@
             {
                 "qid": 0,
                 "question_type": "visualization",
-                "question": "Visualize the distribution of Thal phases across increasing ADNC categories (Not Ad, Low, Intermediate, High) as a heatmap. Save the figure as 'thal_phase_distribution_adnc.png' in the current folder."
+                "question": "Visualize the distribution of Thal phases across increasing ADNC categories (Not Ad, Low, Intermediate, High) as a heatmap. Save the figure as 'thal_phase_distribution_adnc_1.png' in the current folder."
             }
         ]
     ]

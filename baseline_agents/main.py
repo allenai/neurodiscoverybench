@@ -113,7 +113,7 @@ def get_dataset_df(
         "gen_image",
         "gold_hypo",
         "gen_hypo",
-        "hms",
+        "hms_score",
         "eval_result",
     ]
 
@@ -155,7 +155,7 @@ def get_dataset_df(
                 gen_hypo = None
                 gold_image = None
                 gen_image = None
-                hms = None
+                hms_score = None
                 eval_result = None
 
                 if "fig" in dataset_name:
@@ -177,7 +177,7 @@ def get_dataset_df(
                     "gen_image": gen_image,
                     "gold_hypo": gold_hypo,
                     "gen_hypo": gen_hypo,
-                    "hms": hms,
+                    "hms_score": hms_score,
                     "eval_result": eval_result,
                 }
                 data = pd.concat([data, pd.DataFrame([instance])])

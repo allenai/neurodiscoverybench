@@ -1,7 +1,8 @@
 import asyncio
+import click
 import json
 import pandas as pd
-import sys
+from pathlib import Path
 
 from openai import OpenAI
 
@@ -9,6 +10,7 @@ from lm_utils import (
     get_response,
     run_chatgpt_query_multi_turn,
 )
+from image_eval_utils import score_figure
 
 
 def prepare_dataset_metadata_json(dataset_meta, use_column_metadata=True):
@@ -402,9 +404,8 @@ async def run_eval_gold_vs_gen_NL_hypo_workflow(
 
 
 async def main(
-    generated_results_csv: str,
-    actual_results_csv: str,
-    output_data_csv: str,
+    agent_results_csv: str,
+    output_csv: str | None = None,
     eval_model: str = "gpt-4o",
 ) -> None:
     """
@@ -412,12 +413,10 @@ async def main(
 
     Parameters
     ----------
-    generated_results_csv : str
-        Path to the generated hypothesis csv (created using "make_csv.py" script).
-    actual_results_csv : str
-        Path to the gold hypotheses csv (present under "eval" dir).
-    output_data_csv : str
-        Path to the csv file where you want to store the eval scores.
+    agent_results_csv : str
+        Path to the generated hypothesis csv (created by the inference script `baseline_agents/main.py`).
+    output_csv : str, optional
+        Path to save evaluated CSV file. If not provided, a new file with '_evaluated' suffix will be created.
     eval_model : str
         Model to use for evaluating the samples.
 
@@ -426,57 +425,86 @@ async def main(
     None
     """
 
-    print(f"> GENERATED RESULTS: {generated_results_csv}")
-    print(f"> ACTUAL RESULTS: {actual_results_csv}")
+    agent_results_df = pd.read_csv(agent_results_csv)
+    size = agent_results_df.shape[0]
+    agent_results_path = Path(agent_results_csv)
 
-    generated_results_df = pd.read_csv(generated_results_csv)
-    actual_results_df = pd.read_csv(actual_results_csv)
+    # NOTE: eval_result is empty when created so when we reload it
+    #       its type is auto-inferred to float64, we need to force
+    #       it to object otherwise it raises warning.
+    agent_results_df["eval_result"] = agent_results_df["eval_result"].astype("object")
 
-    # create unique id in actual results to merge on
-    actual_results_df["unique_id"] = actual_results_df.apply(lambda row: f"{row["dataset"]}||{row["metadataid"]}||{row["query_id"]}", axis=1)
-
-    merged_data = pd.merge(left=generated_results_df, right=actual_results_df, on="unique_id")
-    size = merged_data.shape[0]
-
-    for idx, row in merged_data.iterrows():
-        print(f"|>>> Evaluating sample #: {idx+1}/{size} <<<|")
-
-        # NOTE: Evaluate non-image samples
-        dataset = row["dataset"]
-        query = row["query"]
-        gen_hypo = row["hypothesis"]
-        gold_hypo = row["gold_hypo"]
-        dataset_metadata = eval(row["metadata"])
-
-        if "fig" in dataset:
-            print(f"Skipping image sample {idx+1}")
-            continue
-
-        eval_result = await run_eval_gold_vs_gen_NL_hypo_workflow(
-            query=query,
-            gold_hypo=gold_hypo,
-            gold_workflow=None,
-            gen_hypo=gen_hypo,
-            gen_workflow=None,
-            dataset_meta=dataset_metadata,
-            llm_used=eval_model,
-            use_column_metadata=True,
+    if not output_csv:
+        output_csv: Path = Path(agent_results_csv).with_name(
+            f"{agent_results_path.stem}_evaluated{agent_results_path.suffix}"
         )
 
-        merged_data.loc[idx, "hms_score"] = eval_result["HMS"]
-        merged_data.loc[idx, "eval_result"] = json.dumps(eval_result)
+    for idx, row in agent_results_df.iterrows():
+        if pd.notna(row["hms_score"]) and pd.notnull(row["hms_score"]):
+            continue
+
+        print(f"|>>> Evaluating sample #: {idx + 1}/{size} <<<|")
+
+        dataset = row["dataset"]
+        query = row["query"]
+
+        if "fig" in dataset:
+            gold_image = row["gold_image"]
+            gen_image = row["gen_image"]
+
+            if gen_image is None or gen_image is False or gen_image.lower() == "false":
+                continue
+
+            eval_result, hms_score = score_figure(
+                gold_image=gold_image,
+                gen_image=gen_image,
+                model=eval_model,
+            )
+        else:
+            gold_hypo = row["gold_hypo"]
+            gen_hypo = row["gen_hypo"]
+            dataset_metadata = eval(row["metadata"])
+
+            eval_result = await run_eval_gold_vs_gen_NL_hypo_workflow(
+                query=query,
+                gold_hypo=gold_hypo,
+                gold_workflow=None,
+                gen_hypo=gen_hypo,
+                gen_workflow=None,
+                dataset_meta=dataset_metadata,
+                llm_used=eval_model,
+                use_column_metadata=True,
+            )
+            hms_score = eval_result["HMS"]
+
+        print(f"|>>> HMS Score for sample {idx + 1}: {hms_score}")
+
+        agent_results_df.loc[idx, "hms_score"] = hms_score
+        agent_results_df.loc[idx, "eval_result"] = json.dumps(eval_result)
         print("Logging the whole dataframe for redundancy.")
-        merged_data.to_csv(output_data_csv, index=False)
+        agent_results_df.to_csv(str(output_csv), index=False)
+
+
+@click.command()
+@click.argument("agent_results_csv", type=click.Path(exists=True))
+@click.option(
+    "--output-csv",
+    "-o",
+    type=click.Path(),
+    default=None,
+    help="Path to save evaluated CSV file. If not provided, a file with '_evaluated' suffix will be created.",
+)
+@click.option(
+    "--eval-model",
+    "-m",
+    default="gpt-4o",
+    show_default=True,
+    help="Model to use for evaluating the samples.",
+)
+def cli(agent_results_csv: str, output_csv: str | None, eval_model: str) -> None:
+    "Evaluate agent-generated hypotheses and compute scores for each task."
+    asyncio.run(main(agent_results_csv, output_csv, eval_model))
 
 
 if __name__ == "__main__":
-    generated_results_csv = sys.argv[1]
-    actual_results_csv = sys.argv[2]
-    output_data_csv = sys.argv[3]
-    eval_model = sys.argv[4] if len(sys.argv) > 4 else "gpt-4o"
-    asyncio.run(main(
-        generated_results_csv=generated_results_csv,
-        actual_results_csv=actual_results_csv,
-        output_data_csv=output_data_csv,
-        eval_model=eval_model,
-    ))
+    cli()

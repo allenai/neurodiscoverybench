@@ -91,7 +91,7 @@
             {
                 "qid": 0,
                 "question_type": "visualization",
-                "question": "Visualize the distribution of Braak stages across increasing ADNC categories (Not Ad, Low, Intermediate, High) as a heatmap. Save the figure as 'braak_stage_distribution_adnc.png' in the current folder."
+                "question": "Visualize the distribution of Braak stages across increasing ADNC categories (Not Ad, Low, Intermediate, High) as a heatmap. Save the figure as 'braak_stage_distribution_adnc_0.png' in the current folder."
             }
         ]
     ]
