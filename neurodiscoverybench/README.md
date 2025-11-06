@@ -6,7 +6,7 @@ Each folder in `neurodiscoverybench/` represents a subset of benchmark tasks bui
 
 | Folder                      | Description                                                                                                                                                       |
 | :-------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`WMB-raw-text`**          | Text-based tasks from the *Whole Mouse Brain Atlas*, using raw data that requires substantial data wrangling and filtering by the agent.                |
+| **`WMB-raw-text`**          | Text-based tasks from the *Whole Mouse Brain Atlas*, using raw data that requires substantial data wrangling and filtering by the agent. All the hypothesis in this folder are text based               |
 | **`WMB-raw-fig`**           | Visualization tasks from raw WMB data, requiring code-to-figure generation based on unprocessed datasets.                                                         |
 | **`WMB-raw-no-traces`**     | Harder WMB subset without ececution traces, extracted directly from the paper for testing benchmark robustness.                                                   |
 | **`WMB-processed-text`**    | Text based tasks on preprocessed WMB data, where intermediate cleaning and aggregation steps are already applied.                                             |
@@ -30,8 +30,8 @@ Datasets are organized along three key axes:
   * **BlackDeath-Immune** → *Evolution of Immune Genes and the Black Death* (Klunk et al., 2022)
 * **Task type:**
 
-  * **text** → hypothesis or textual reasoning tasks
-  * **fig** → visualization or figure-generation tasks
+  * **text** → text based output
+  * **fig** → figure based output 
 * **Data processing level (for WMB):**
 
   * **raw** → agents must perform heavy data manipulation directly on the raw dataset
