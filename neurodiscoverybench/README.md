@@ -15,6 +15,8 @@ Each folder in `neurodiscoverybench/` represents a subset of benchmark tasks bui
 | **`SEA-AD-fig`**            | Visualization tasks from SEA-AD exploring Braak/Thal staging and cell-class distributions across disease progression.                                             |
 | **`BlackDeath-Immune-fig`** | Figure-generation tasks from *Evolution of Immune Genes and the Black Death*, analyzing evolutionary signals in immune gene variants.                             |
 
+
+  TODO: Add numbers to the table 
 ---
 
 ## 🧩 Naming Conventions
