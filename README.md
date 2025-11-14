@@ -27,12 +27,18 @@ This repository is organized into four main components:
 ### 1. Setup python virtual environment
 
 Create a Python virtual environment to isolate your work with NeuroDiscoveryBench and avoid dependency conflicts with your global Python environment:
-
 ```bash
+# (for Linux/macOS)
 python3 -m venv .venv
 source .venv/bin/activate
 pip3 install -r requirements.txt
+
+# (for Windows)
+python -m venv .venv
+source .venv/Scripts/activate
+pip install -r requirements.txt
 ```
+(On Windows, if 'source .venv/Scripts/activate' returns a syntax error, e.g., from Cygwin, run 'dos2unix .venv/Scripts/activate')
 
 If you use `uv` package manager, use these following commands to set up the virtual environment:
 
@@ -47,7 +53,11 @@ uv pip3 install -r requirements.txt
 Some large data files are hosted on Google Drive. To download and set them up, run the following script:
 
 ```bash
+# (for Linux/macOS)
 python3 utils/bio_data_loader.py
+
+# (for Windows)
+python utils/bio_data_loader.py
 ```
 
 ### 3. Running Baseline Agents
