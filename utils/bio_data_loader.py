@@ -137,10 +137,8 @@ if __name__ == "__main__":
         ],
         exclude_files=[
             "cell_metadata.csv",
-            "color.csv",
             "pivot.csv",
             "result.csv",
-            "term_set.csv",
             "cluster_to_cluster_annotation_membership_pivoted.csv",
         ],
     )
