@@ -30,9 +30,7 @@ def hash_json_content(file_path: str) -> Optional[str]:
     try:
         with open(file_path, "r", encoding="utf-8") as f:
             data = json.load(f)
-        normalized = json.dumps(
-            data, sort_keys=True, separators=(",", ":")
-        )
+        normalized = json.dumps(data, sort_keys=True, separators=(",", ":"))
         return hashlib.sha256(normalized.encode("utf-8")).hexdigest()
     except Exception as e:
         logger.debug("Error reading %s: %s", file_path, e)
@@ -53,11 +51,7 @@ def find_duplicate_jsons(directory: Union[str, Path]) -> Dict[str, List[str]]:
         if content_hash:
             hash_to_files[content_hash].append(str(file_path))
 
-    duplicates = {
-        h: files
-        for h, files in hash_to_files.items()
-        if len(files) > 1
-    }
+    duplicates = {h: files for h, files in hash_to_files.items() if len(files) > 1}
 
     if duplicates:
         logger.info("Found duplicate JSON files")

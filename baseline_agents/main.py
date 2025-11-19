@@ -137,9 +137,7 @@ def get_dataset_df(
         pattern = str(dataset_path / "**/*.json")
         metadata_files = glob.glob(pattern, recursive=True)
     else:
-        raise ValueError(
-            "`dataset_directory` must be a directory or a json file path"
-        )
+        raise ValueError("`dataset_directory` must be a directory or a json file path")
 
     answer_key_df = pd.DataFrame()
     if eval_directory is not None:
@@ -148,14 +146,9 @@ def get_dataset_df(
             answer_key_df = pd.read_csv(answer_key_path)
 
             def _make_unique_id(row):
-                return (
-                    f"{row['dataset']}||{row['metadataid']}||"
-                    f"{row['query_id']}"
-                )
+                return f"{row['dataset']}||{row['metadataid']}||{row['query_id']}"
 
-            answer_key_df["unique_id"] = answer_key_df.apply(
-                _make_unique_id, axis=1
-            )
+            answer_key_df["unique_id"] = answer_key_df.apply(_make_unique_id, axis=1)
 
     data = pd.DataFrame(columns=dataframe_columns)
 
@@ -183,13 +176,9 @@ def get_dataset_df(
                     # a matching image exists.
                     if eval_directory is not None and png_files:
                         dataset_name_prefix = dataset_name.split("-")[0]
-                        gold_image_dir = _IMAGE_ANSWER_KEY_MAP.get(
-                            dataset_name_prefix
-                        )
+                        gold_image_dir = _IMAGE_ANSWER_KEY_MAP.get(dataset_name_prefix)
                         if gold_image_dir is not None:
-                            gold_image = (
-                                eval_directory / gold_image_dir / png_files[0]
-                            )
+                            gold_image = eval_directory / gold_image_dir / png_files[0]
                 else:
                     # For non-figure datasets, try to look up the gold
                     # hypothesis in the answer key if available.
@@ -223,9 +212,7 @@ def get_dataset_df(
     # `sample` items per dataset (if sample > 0).
     if not dataset_path.is_file() and sample is not None and sample > 0:
         limited = (
-            data.groupby("dataset", sort=False)
-            .head(sample)
-            .reset_index(drop=True)
+            data.groupby("dataset", sort=False).head(sample).reset_index(drop=True)
         )
         return limited
 
@@ -350,7 +337,7 @@ def run_agent(
     "-dk",
     is_flag=True,
     default=False,
-    help="Provide domain knowledge to the agent."
+    help="Provide domain knowledge to the agent.",
 )
 @click.option(
     "--provide-workflow-tags",
