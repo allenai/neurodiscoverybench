@@ -1,6 +1,7 @@
 import asyncio
 import json
 import re
+from typing import Optional
 import pandas as pd
 import glob
 from pathlib import Path
@@ -87,7 +88,7 @@ def extract_png_names_from_text(metadata: dict) -> list[str]:
 
 def get_dataset_df(
     dataset_path: str,
-    sample: int = 1,
+    sample: Optional[int] = None,
 ) -> pd.DataFrame:
     """
     Given a NeuroDiscoveryBench dataset directory, it traverses all the
@@ -238,7 +239,7 @@ async def run_agent_async(
     provide_domain_knowledge: bool = False,
     provide_workflow_tags: bool = False,
     experiment_name: str = DEFAULT_EXP_NAME,
-    sample: int = 1,
+    sample: Optional[int] = None,
 ):
     # Prepare logging directory
     log_dir = Path(LOG_DIR)
@@ -304,7 +305,7 @@ def run_agent(
     provide_domain_knowledge: bool = False,
     provide_workflow_tags: bool = False,
     experiment_name: str = DEFAULT_EXP_NAME,
-    sample: int = 1,
+    sample: Optional[int] = None,
 ):
     asyncio.run(
         run_agent_async(
@@ -367,10 +368,10 @@ def run_agent(
 @click.option(
     "--sample",
     "-s",
-    default=1,
+    default=None,
     type=int,
-    show_default=True,
-    help="Number of samples per dataset to run (1 = first sample).",
+    show_default=False,
+    help="Number of samples per dataset to run (None = all samples, 1 = first sample).",
 )
 def cli(
     agent_name: str,
@@ -379,7 +380,7 @@ def cli(
     provide_domain_knowledge: bool,
     provide_workflow_tags: bool,
     experiment_name: str,
-    sample: int,
+    sample: Optional[int],
 ):
     """Run a neurodiscovery benchmarking agent.
 

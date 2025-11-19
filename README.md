@@ -94,8 +94,8 @@ Options:
                                   agent.
   -e, --experiment-name TEXT      Experiment name (directory under logs).
                                   Defaults to timestamp.
-  -s, --sample INTEGER            Number of samples per dataset to run (1 =
-                                  first sample).  [default: 1]
+  -s, --sample INTEGER            Number of samples per dataset to run (None =
+                                  all samples, 1 = first sample).
   --help                          Show this message and exit.
 ```
 
