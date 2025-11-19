@@ -345,15 +345,17 @@ def run_agent(
     ),
 )
 @click.option(
-    "--provide-domain-knowledge/--no-domain-knowledge",
+    "--provide-domain-knowledge",
+    "-dk",
+    is_flag=True,
     default=False,
-    show_default=True,
-    help="Whether to provide domain knowledge to the agent.",
+    help="Provide domain knowledge to the agent."
 )
 @click.option(
-    "--provide-workflow-tags/--no-workflow-tags",
+    "--provide-workflow-tags",
+    "-wt",
+    is_flag=True,
     default=False,
-    show_default=True,
     help="Whether to provide workflow tags to the agent.",
 )
 @click.option(
@@ -379,12 +381,10 @@ def cli(
     experiment_name: str,
     sample: int,
 ):
-    """CLI wrapper for `run_agent`.
+    """Run a neurodiscovery benchmarking agent.
 
-    Example:
-        python3 baseline_agents/main.py \b
-            --agent-name no_data_agent \b
-            --config-file utils/bio_datasets_config.yaml
+    Example: \n
+        python3 baseline_agents/main.py --agent-name no_data_agent --metadata-path neurodiscoverybench
     """
     if experiment_name is None:
         experiment_name = DEFAULT_EXP_NAME
