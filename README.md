@@ -100,14 +100,14 @@ Options:
 ```
 
 **Command Usage Examples**
-1. Run the agent on all the samples on all the dataset, specify the agent name.
+1. Run the agent on all the samples on all the datasets, specifying the agent name.
 ``` bash
 python3 baseline_agents/main.py --agent-name no_data_agent
 ```
 
-2. Run the agent on just first 3 samples of each dataset, specify the number of samples using `--sample` flag.
+2. Run the agent on just the first sample of each dataset, specify the number of samples using `--sample` flag.
 ``` bash
-python3 baseline_agents/main.py --agent-name no_data_agent --sample 3
+python3 baseline_agents/main.py --agent-name no_data_agent --sample 1
 ```
 
 3. Run the agent on just one dataset, set `--metadata-path` to a specific dataset directory.
@@ -115,7 +115,7 @@ python3 baseline_agents/main.py --agent-name no_data_agent --sample 3
 python3 baseline_agents/main.py --agent-name no_data_agent --metadata-path neurodiscoverybench/WMB-processed-text
 ```
 
-4. Run the agent on just one metadata JSON file, set `--metadata-path` to a specific metadata JSON file.
+4. Run the agent on just one metadata file, set `--metadata-path` to a specific metadata JSON file.
 ``` bash
 python3 baseline_agents/main.py --agent-name no_data_agent --metadata-path neurodiscoverybench/WMB-processed-text/metadata_0.json
 ```
