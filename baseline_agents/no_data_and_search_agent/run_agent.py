@@ -106,7 +106,7 @@ async def run_agent(
 
     query = data_row["query"]
     data = data_row["metadata"]
-    data_dir = data_row["data_dir"]
+    data_dir = data_row["dataset_directory"]
 
     no_data_agent = NoDataAgentWithSearchTool(
         config_file=config_file,

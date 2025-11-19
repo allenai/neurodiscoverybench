@@ -5,7 +5,7 @@ from datetime import datetime
 
 import matplotlib
 
-from agent import NoDataAgent
+from no_data_agent.agent import NoDataAgent
 
 matplotlib.use("Agg")
 
@@ -106,7 +106,7 @@ async def run_agent(
 
     query = data_row["query"]
     data = data_row["metadata"]
-    data_dir = data_row["data_dir"]
+    data_dir = data_row["dataset_directory"]
 
     no_data_agent = NoDataAgent(
         config_file=config_file,
