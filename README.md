@@ -99,12 +99,34 @@ Options:
   --help                          Show this message and exit.
 ```
 
-This script will create a new directory called `logs`. Inside this directory, you will find:
+**Command Usage Examples**
+1. Run the agent on all the samples on all the dataset, specify the agent name.
+``` bash
+python3 baseline_agents/main.py --agent-name no_data_agent
+```
 
-- The **agent-generated logs** for the experiment.
-- A **`results.csv`** file containing the instances on which the agent ran.
+2. Run the agent on just first 3 samples of each dataset, specify the number of samples using `--sample` flag.
+``` bash
+python3 baseline_agents/main.py --agent-name no_data_agent --sample 3
+```
 
-The `results.csv` file is essential, as it serves as the input required to evaluate the agent’s performance.
+3. Run the agent on just one dataset, set `--metadata-path` to a specific dataset directory.
+``` bash
+python3 baseline_agents/main.py --agent-name no_data_agent --metadata-path neurodiscoverybench/WMB-processed-text
+```
+
+4. Run the agent on just one metadata JSON file, set `--metadata-path` to a specific metadata JSON file.
+``` bash
+python3 baseline_agents/main.py --agent-name no_data_agent --metadata-path neurodiscoverybench/WMB-processed-text/metadata_0.json
+```
+
+> [!NOTE]
+> This script will create a new directory called `logs`. Inside this directory, you will find:
+>
+> - The **agent-generated logs** for the experiment.
+> - A **`results.csv`** file containing the instances on which the agent ran.
+>
+> The `results.csv` file is essential, as it serves as the input required to evaluate the agent’s performance.
 
 > [!NOTE]
 > Please note that if requisite data files are not downloaded, the agents will automatically download and set them up. 
