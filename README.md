@@ -98,8 +98,12 @@ Options:
                                   all samples, 1 = first sample).
   --help                          Show this message and exit.
 ```
+> [!NOTE]
+> Please note that if requisite data files are not downloaded, the agents will automatically download and set them up. 
 
-**Command Usage Examples**
+<details>
+
+**<summary>:wrench: Usage Examples</summary>**
 1. Run the agent on all the samples on all the datasets, specifying the agent name.
 ``` bash
 python3 baseline_agents/main.py --agent-name no_data_agent
@@ -119,6 +123,7 @@ python3 baseline_agents/main.py --agent-name no_data_agent --metadata-path neuro
 ``` bash
 python3 baseline_agents/main.py --agent-name no_data_agent --metadata-path neurodiscoverybench/WMB-processed-text/metadata_0.json
 ```
+</details>
 
 > [!NOTE]
 > This script will create a new directory called `logs`. Inside this directory, you will find:
@@ -128,8 +133,7 @@ python3 baseline_agents/main.py --agent-name no_data_agent --metadata-path neuro
 >
 > The `results.csv` file is essential, as it serves as the input required to evaluate the agent’s performance.
 
-> [!NOTE]
-> Please note that if requisite data files are not downloaded, the agents will automatically download and set them up. 
+
 
 ### 4. Running the DataVoyager Agent
 
