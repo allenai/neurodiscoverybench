@@ -68,37 +68,43 @@ To run the baseline agents, use the `baseline_agents/main.py` script with the fo
 python3 main.py --help
 ```
 The output will show the following options:
-```
-
+```bash
 Usage: main.py [OPTIONS]
 
   Run a neurodiscovery benchmarking agent.
 
+  Example:
+
+      python3 baseline_agents/main.py --agent-name no_data_agent --metadata-
+      path neurodiscoverybench
+
 Options:
-  --agent_name TEXT                The name of the agent to use. Must be one
-                                   of: "no_data_agent", "no_data_and_search_agent".
-                                   [required]
-
-  --config_file PATH               Path to the YAML configuration file defining
-                                   agent parameters. See `baseline_agents/no_data_agent/config/`
-                                   for reference. [required]
-
-  --data_dir PATH                  Directory containing benchmark data.
-                                   [default: "neurodiscoverybench"]
-
-  --provide_domain_knowledge       If set, the agent will be provided with
-                                   additional domain knowledge in each query.
-
-  --provide_workflow_tags          If set, workflow tags (metadata about
-                                   experiment steps) will be included in
-                                   query.
-
-  --output_csv_path TEXT           Name for the output CSV file that will hold
-                                   the generated hypotheses and images. This CSV
-                                   will be used as input for evaluating the agent logs.
-
-  --help                           Show this message and exit.
+  -a, --agent-name                [no_data_agent|no_data_and_search_agent]
+                                  Agent to run. Choices: no_data_agent,
+                                  no_data_and_search_agent  [required]
+  -c, --config-file TEXT          Path to agent config file. If omitted, use
+                                  the agent default.
+  -d, --metadata-path TEXT        Path to the dataset directory or a single
+                                  metadata json file. If a file is provided,
+                                  only questions from that file are used.
+                                  [default: neurodiscoverybench]
+  -dk, --provide-domain-knowledge
+                                  Provide domain knowledge to the agent.
+  -wt, --provide-workflow-tags    Whether to provide workflow tags to the
+                                  agent.
+  -e, --experiment-name TEXT      Experiment name (directory under logs).
+                                  Defaults to timestamp.
+  -s, --sample INTEGER            Number of samples per dataset to run (1 =
+                                  first sample).  [default: 1]
+  --help                          Show this message and exit.
 ```
+
+This script will create a new directory called `logs`. Inside this directory, you will find:
+
+- The **agent-generated logs** for the experiment.
+- A **`results.csv`** file containing the instances on which the agent ran.
+
+The `results.csv` file is essential, as it serves as the input required to evaluate the agent’s performance.
 
 > [!NOTE]
 > Please note that if requisite data files are not downloaded, the agents will automatically download and set them up. 
