@@ -452,7 +452,7 @@ async def main(
             gold_image = row["gold_image"]
             gen_image = row["gen_image"]
 
-            if gen_image is None or gen_image is False or gen_image.lower() == "false":
+            if pd.isna(gen_image):
                 continue
 
             eval_result, hms_score = score_figure(
