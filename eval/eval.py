@@ -477,7 +477,7 @@ async def main(
             )
             hms_score = eval_result["HMS"]
 
-        print(f"|>>> HMS Score for sample {idx + 1}: {hms_score}")
+        print(f"|>>> HMS Score for sample {idx + 1}: {hms_score} <<<|")
 
         agent_results_df.loc[idx, "hms_score"] = hms_score
         agent_results_df.loc[idx, "eval_result"] = json.dumps(eval_result)
