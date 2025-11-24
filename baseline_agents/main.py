@@ -273,7 +273,16 @@ async def run_agent_async(
             workflow_tags=provide_workflow_tags,
         )
 
-        # Read the log file and parse the log
+        # Update gen_image: if gold_image exists, check for same filename in sample_dir
+        gold_image_path = row.get("gold_image")
+        if pd.isna(gold_image_path):
+            dataset_df.at[idx, "gen_image"] = pd.NA
+        else:
+            gold_image_name = Path(gold_image_path).name
+            candidate = sample_dir / gold_image_name
+            dataset_df.at[idx, "gen_image"] = str(candidate) if candidate.is_file() else pd.NA
+
+        # Update gen_hypo by parsing the log file
         result, status = parse_log(str(log_file_path))
         if status:
             hypothesis = result.hypothesis if result else ""

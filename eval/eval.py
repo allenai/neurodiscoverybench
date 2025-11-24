@@ -452,7 +452,7 @@ async def main(
             gold_image = row["gold_image"]
             gen_image = row["gen_image"]
 
-            if gen_image is None or gen_image is False or gen_image.lower() == "false":
+            if pd.isna(gen_image):
                 continue
 
             eval_result, hms_score = score_figure(
@@ -477,7 +477,7 @@ async def main(
             )
             hms_score = eval_result["HMS"]
 
-        print(f"|>>> HMS Score for sample {idx + 1}: {hms_score}")
+        print(f"|>>> HMS Score for sample {idx + 1}: {hms_score} <<<|")
 
         agent_results_df.loc[idx, "hms_score"] = hms_score
         agent_results_df.loc[idx, "eval_result"] = json.dumps(eval_result)
