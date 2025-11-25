@@ -210,4 +210,14 @@ Explore BioDiscoveryBench at Huggingface's data viewer TBA
 
 ## ✍️ Citation
 
-TBA
+If you find our work helpful, please use the following citations.
+```
+@misc{surana2025neurodiscoverybench,
+  author    = "Harshit Surana, Bodhisattwa Prasad Majumder, Abhijeetsingh Meena, Nabid Akhtar, Bhavana Dalvi Mishra, Kris Ganjam, Peter Clark",
+  title     = "NeuroDiscoveryBench: Benchmarking AI for Neuroscience Data Analysis",
+  journal   = "Github",
+  howpublished = {\url{https://github.com/allenai/neurodiscoverybench}}
+  year      = "2025"
+}
+
+```
