@@ -1,6 +1,6 @@
-# ⭐️ Running a Custom Agent on NeuroDiscoveryBench
+# :sparkles: Building a Custom Agent for NeuroDiscoveryBench
 
-This guide provides step-by-step instructions for integrating your **custom agent** into the NeuroDiscoveryBench pipeline, performing inference on benchmark tasks, and evaluating your agent's performance using our provided metrics.
+This guide provides step-by-step instructions for integrating your **custom agent** into the NeuroDiscoveryBench pipeline, performing inference on benchmark tasks, and evaluating your agent's performance with our eval metrics.
 
 ## 1. Prerequisites
 
