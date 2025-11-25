@@ -7,8 +7,6 @@ pyyaml==6.0.2
 nest_asyncio==1.6.0
 click==8.1.8
 tenacity~=9.0.0
-modal
-nora_lib-impl==1.4.0
 pydantic==2.10.6
 pydantic_core==2.27.2
 beautifulsoup4==4.13.4
