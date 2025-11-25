@@ -201,6 +201,9 @@ options:
                         Optional: write dataset-level aggregates to CSV
 ```
 
+## 🧩 Custom Agent Integration
+
+To add your own agent to NeuroDiscoveryBench, follow the setup-by-step guide here. It covers plugging in your agent, running inference, and evaluating on all datasets.
 
 ## 🤗 Huggingface
 Explore BioDiscoveryBench at Huggingface's data viewer TBA
