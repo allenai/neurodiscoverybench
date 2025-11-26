@@ -2,7 +2,7 @@
 
 ## 🗂️ Structure
 
-Each folder in `neurodiscoverybench` represents a subset of benchmark tasks - each of which include metadata, dataset files and benchmark questions.
+Each folder in `neurodiscoverybench` represents a subset of benchmark tasks - each of which include metadata, dataset files and benchmark questions. **NOTE** for the WMB* directories, the dataset files are not present in this repository (as they are large) and need to be downloaded using utils/bio_data_loader.py, see the top-level README.md for instructions. 
 
 | **Benchmark Folder**        | **Question Count** | **Subset Description**                                                                                                                                                                            |
 | :-------------------------- | :-------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

@@ -24,35 +24,23 @@ This repository is organized into four main components:
 
 ## 🚀 Getting Started
 
+These installation instructions have been tested on Linux/macOS/Ubuntu.
+
 ### 1. Setup `OPENAI_API_KEY` in your execution environment
 
 The following command will set the temporary variables in your environment.
 ```bash
-# (for Linux/macOS)
 export OPENAI_API_KEY="sk-xxx"
-
-# (for Windows)
-```bash
-set OPENAI_API_KEY=sk-xxx       # if you use CMD
-$env:OPENAI_API_KEY = "sk-xxx"  # or if you use PowerShell
 ```
 
 ### 2. Setup python virtual environment
 
 Create a Python virtual environment to isolate your work with NeuroDiscoveryBench and avoid dependency conflicts with your global Python environment:
 ```bash
-# (for Linux/macOS)
 python3 -m venv .venv
 source .venv/bin/activate
 pip3 install -r requirements.txt
-
-# (for Windows)
-python -m venv .venv
-source .venv/Scripts/activate
-pip install -r requirements.txt
 ```
-(On Windows, if 'source .venv/Scripts/activate' returns a syntax error, e.g., from Cygwin, run 'dos2unix .venv/Scripts/activate')
-
 If you use `uv` package manager, use these following commands to set up the virtual environment:
 
 ```bash
@@ -60,17 +48,14 @@ uv venv
 source .venv/bin/activate
 uv pip3 install -r requirements.txt
 ```
+Note that the install can take several minutes.
 
 ### 3. Download the dataset files
 
 Some large data files are hosted on Google Drive. To download and set them up, run the following script:
 
 ```bash
-# (for Linux/macOS)
 python3 utils/bio_data_loader.py
-
-# (for Windows)
-python utils/bio_data_loader.py
 ```
 
 ### 4. Running Baseline Agents
