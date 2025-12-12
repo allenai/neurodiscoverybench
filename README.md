@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="100%" alt="image" src="https://github.com/user-attachments/assets/b90a6956-8d60-4d2b-96d0-32f9de5eb882" />
+</p>
+
 # 🧬 NeuroDiscoveryBench
 
 NeuroDiscoveryBench is an open benchmark designed to evaluate how well AI systems can analyze real world neuroscience, genetics, and immunology datasets to generate scientific insights. The benchmark includes both text- and figure-based tasks, modeled after real world workflows that involve data manipulation, data analysis, and visualization. 
