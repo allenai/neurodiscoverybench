@@ -188,6 +188,17 @@ To add your own agent to NeuroDiscoveryBench, follow the setup-by-step guide [he
 ## 🤗 Huggingface
 Explore BioDiscoveryBench at Huggingface's data viewer TBA
 
+## 📄 License 
+The code is licensed under Apache 2.0. The datasets are licensed under [ODC-BY](https://opendatacommons.org/licenses/by/1-0/), and are intended for research and educational use in accordance with Ai2's [Responsible Use Guidelines](https://allenai.org/responsible-use). 
+
+### Source attributions
+The datasets are derived from the following datasets originally published and made available by the Allen Institute:
+- Allen Brain Cell Atlas (ABC Atlas) Mouse Whole Brain dataset at https://alleninstitute.github.io/abc_atlas_access/intro.html 
+- Seattle Alzheimer's Disease Brain Cell Atlas (SEA-AD) at https://brain-map.org/consortia/sea-ad/our-data
+
+It also contains a small subset of the GSE1914118 dataset made available at the NCBI Gene Expression Omnibus (GEO) at https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE194118 by the authors of the following paper, as part of their supporting data: Evolution of immune genes is associated with the Black Death. Klunk, J., Vilgalys, T.P., Demeure, C.E. et al. Nature 611, 312–319 (2022).  https://doi.org/10.1038/s41586-022-05349-x 
+
+
 ## ✍️ Citation
 
 If you find our work helpful, please use the following citations.
