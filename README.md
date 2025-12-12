@@ -201,6 +201,11 @@ The datasets are derived from the following datasets originally published and ma
 It also contains a small subset of the GSE1914118 dataset made available at the NCBI Gene Expression Omnibus (GEO) at https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE194118 by the authors of the following paper, as part of their supporting data: Evolution of immune genes is associated with the Black Death. Klunk, J., Vilgalys, T.P., Demeure, C.E. et al. Nature 611, 312–319 (2022).  https://doi.org/10.1038/s41586-022-05349-x 
 
 
+## ✉️ Get in touch!
+
+For questions or issues related to the dataset or code, please email us or open a GitHub issue: harshits@allenai.org **(Harshit Surana)**, bodhisattwam@allenai.org **(Bodhisattwa Prasad Majumder)**.
+
+
 ## ✍️ Citation
 
 If you find our work helpful, please use the following citations.
