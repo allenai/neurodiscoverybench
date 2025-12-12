@@ -185,8 +185,6 @@ options:
 
 To add your own agent to NeuroDiscoveryBench, follow the setup-by-step guide [here](inference_with_custom_agent.md). It covers plugging in your agent, running inference, and evaluating on all datasets.
 
-## 🤗 Huggingface
-Explore BioDiscoveryBench at Huggingface's data viewer TBA
 
 ## 📄 License 
 The code is licensed under Apache 2.0. The datasets are licensed under [ODC-BY](https://opendatacommons.org/licenses/by/1-0/), and are intended for research and educational use in accordance with Ai2's [Responsible Use Guidelines](https://allenai.org/responsible-use). 
