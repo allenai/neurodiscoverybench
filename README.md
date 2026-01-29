@@ -4,7 +4,7 @@
 
 # 🧬 NeuroDiscoveryBench
 
-NeuroDiscoveryBench is an open benchmark designed to evaluate how well AI systems can analyze real world neuroscience, genetics, and immunology datasets to generate scientific insights. The benchmark includes both text- and figure-based tasks, modeled after real world workflows that involve data manipulation, data analysis, and visualization. 
+NeuroDiscoveryBench is an open benchmark designed to evaluate how well AI systems can analyze real world neuroscience, genetics, and immunology datasets to generate scientific insights. The benchmark includes both text- and figure-based tasks, modeled after real world workflows that involve data manipulation, data analysis, and visualization. For a more detailed description, see the [blog post](https://allenai.org/blog/neurodiscoverybench).
 
 It builds on landmark open datasets by the Allen Institute and includes workflows derived from following papers:
 
@@ -213,8 +213,8 @@ If you find our work helpful, please use the following citations.
 @misc{surana2025neurodiscoverybench,
   author    = "Harshit Surana, Bodhisattwa Prasad Majumder, Abhijeetsingh Meena, Nabid Akhtar, Bhavana Dalvi Mishra, Kris Ganjam, Peter Clark",
   title     = "NeuroDiscoveryBench: Benchmarking AI for Neuroscience Data Analysis",
-  journal   = "Github",
-  howpublished = {\url{https://github.com/allenai/neurodiscoverybench}}
+  journal   = "Ai2 Report",
+  howpublished = {\url{https://allenai.org/blog/neurodiscoverybench}}
   year      = "2025"
 }
 
